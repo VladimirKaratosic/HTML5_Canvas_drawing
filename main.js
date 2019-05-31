@@ -1,3 +1,5 @@
+"use strict";
+
 const canvas = document.querySelector('#draw');
 const ctx = canvas.getContext('2d');
 
@@ -14,9 +16,8 @@ let lastY = 0;
 let hue = 0;
 let direction = true;
 
-function draw(e) {
-  if (!isDrawing) return; // stop the fn from running when they are not moused down
-  console.log(e);
+const draw = (e) => {
+  if (!isDrawing) return; // stop the fn from running when they are not moused down  
   ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
   ctx.beginPath();
   // start from
